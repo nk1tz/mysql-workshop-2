@@ -1,0 +1,15 @@
+SELECT accountId, COUNT(*) FROM AddressBook GROUP BY accountId ORDER BY COUNT(*) DESC LIMIT 1;  
++-----------+----------+
+| accountId | COUNT(*) |
++-----------+----------+
+|         5 |       19 |
++-----------+----------+
+
+
+
+SELECT addressBookId, COUNT(*) FROM Entry GROUP BY addressBookId ORDER BY COUNT(*) DESC LIMIT 1;                                      
++---------------+----------+
+| addressBookId | COUNT(*) |
++---------------+----------+
+|            37 |       52 |
++---------------+----------+
