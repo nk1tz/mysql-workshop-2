@@ -1,0 +1,8 @@
+mysql -u nk1tz
+use decodemtl_addressbook;
+
+UPDATE Account SET password = "12345" WHERE id=2;
+
+UPDATE AddressBook SET name = "NAT LIMITED" WHERE id=1;
+
+UPDATE Entry SET contentLineOne = "adding stuff";
