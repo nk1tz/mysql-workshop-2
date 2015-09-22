@@ -9,3 +9,5 @@ INSERT INTO AddressBook (accountId, name, createdOn) VALUES('NK1', 'Nat LTD Cont
 
 describe Entry;
 INSERT INTO Entry (firstName, lastName, birthday) VALUES('Nat','Kitzke','1988-08-22'); 
+INSERT INTO Entry (firstName, lastName, birthday) VALUES('Ulapei','Tras-Horen','1989-05-29');
+INSERT INTO Entry (firstName, lastName, birthday) VALUES('Aviva','LasVegas','1992-05-13'); 
