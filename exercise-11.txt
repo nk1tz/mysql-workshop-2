@@ -1,0 +1,22 @@
+SELECT COUNT(*) FROM Entry WHERE type!="other";
++----------+
+| COUNT(*) |
++----------+
+|     2800 |
++----------+
+
+
+SELECT COUNT(*) FROM Entry WHERE type = "work" OR "home";
++----------+
+| COUNT(*) |
++----------+
+|     1200 |
++----------+
+
+
+SELECT COUNT(*) FROM Entry WHERE subtype ="phone";
++----------+
+| COUNT(*) |
++----------+
+|      600 |
++----------+
