@@ -1,0 +1,4 @@
+mysql-ctl start
+mysql -u nk1tz
+
+source data/import-table-structure.sql
