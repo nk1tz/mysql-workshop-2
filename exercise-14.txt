@@ -1,0 +1,130 @@
+mysql> CREATE DATABASE Store;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE Store;
+Database changed
+
+CREATE TABLE Product ( id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id)); 
+Query OK, 0 rows affected (0.03 sec)
+
+mysql>  CREATE TABLE Inventory ( id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id)); 
+Query OK, 0 rows affected (0.01 sec)
+
+CREATE TABLE Customers ( id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id)); 
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> CREATE TABLE Invoices ( id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id)); 
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> SHOW TABLES;
++-----------------+
+| Tables_in_Store |
++-----------------+
+| Customers       |
+| Inventory       |
+| Invoices        |
+| Product         |
++-----------------+
+4 rows in set (0.00 sec)
+
+mysql> ALTER TABLE Product ADD COLUMN Name VARCHAR(255);
+Query OK, 0 rows affected (0.15 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Product ADD COLUMN Model VARCHAR(255);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Product ADD COLUMN Company VARCHAR(255);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Product ADD COLUMN SKU VARCHAR(255);
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE Product;
++---------+--------------+------+-----+---------+----------------+
+| Field   | Type         | Null | Key | Default | Extra          |
++---------+--------------+------+-----+---------+----------------+
+| id      | int(11)      | NO   | PRI | NULL    | auto_increment |
+| Name    | varchar(255) | YES  |     | NULL    |                |
+| Model   | varchar(255) | YES  |     | NULL    |                |
+| Company | varchar(255) | YES  |     | NULL    |                |
+| SKU     | varchar(255) | YES  |     | NULL    |                |
++---------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+ALTER TABLE Inventory ADD COLUMN ProductId INT NOT NULL;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Inventory ADD COLUMN DateStocked DATETIME NOT NULL;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Inventory ADD COLUMN DateOut DATETIME;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE Inventory;
++-------------+----------+------+-----+---------+----------------+
+| Field       | Type     | Null | Key | Default | Extra          |
++-------------+----------+------+-----+---------+----------------+
+| id          | int(11)  | NO   | PRI | NULL    | auto_increment |
+| ProductId   | int(11)  | NO   |     | NULL    |                |
+| DateStocked | datetime | NO   |     | NULL    |                |
+| DateOut     | datetime | YES  |     | NULL    |                |
++-------------+----------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+
+mysql> ALTER TABLE Customers ADD COLUMN CustomerAccountId VARCHAR(255);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+ALTER TABLE Customers ADD COLUMN Country VARCHAR(255);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+ALTER TABLE Customers ADD COLUMN CreatedOn DATETIME;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE Customers;
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| id                | int(11)      | NO   | PRI | NULL    | auto_increment |
+| CustomerAccountId | varchar(255) | YES  |     | NULL    |                |
+| Country           | varchar(255) | YES  |     | NULL    |                |
+| CreatedOn         | datetime     | YES  |     | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> ALTER TABLE Invoices ADD COLUMN CustomerId VARCHAR(255);
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Invoices ADD COLUMN ProductId INT;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Invoices ADD COLUMN CreatedOn DATETIME;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Invoices ADD COLUMN ReturnedON DATETIME;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE Invoices;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| CustomerId | varchar(255) | YES  |     | NULL    |                |
+| ProductId  | int(11)      | YES  |     | NULL    |                |
+| CreatedOn  | datetime     | YES  |     | NULL    |                |
+| ReturnedON | datetime     | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
