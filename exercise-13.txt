@@ -1,6 +1,6 @@
-SELECT Count(*) FROM Entry WHERE contentLineOne LIKE "(3%";
+mysql> SELECT COUNT(*) FROM Entry WHERE contentLineOne LIKE "(3%" OR "_-3%" OR "%3__-___-____" OR "%3__)-___-____";
 +----------+
-| Count(*) |
+| COUNT(*) |
 +----------+
 |       39 |
 +----------+
