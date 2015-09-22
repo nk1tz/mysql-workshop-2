@@ -1,4 +1,4 @@
-mysql> SELECT COUNT(*) FROM Entry WHERE contentLineOne LIKE "(3%" OR "_-3%" OR "%3__-___-____" OR "%3__)-___-____";
+mysql> SELECT COUNT(*) FROM Entry WHERE contentLineOne LIKE "(3%" OR contentLineOne LIKE "_-3%" OR contentLineOne LIKE "%3__-___-____" OR contentLineOne LIKE "%3__)-___-____";
 +----------+
 | COUNT(*) |
 +----------+
