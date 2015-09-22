@@ -1,0 +1,5 @@
+mysql -u nk1tz
+use decodemtl_addressbook;
+describe Account;
+
+INSERT INTO Account (email, password, createdOn) VALUES('nk1tz@gmail.com', '123456789', '2016-09-22'); 
