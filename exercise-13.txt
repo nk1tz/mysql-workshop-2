@@ -1,0 +1,22 @@
+SELECT Count(*) FROM Entry WHERE contentLineOne LIKE "(3%";
++----------+
+| Count(*) |
++----------+
+|       39 |
++----------+
+
+
+SELECT COUNT(*) FROM Entry WHERE type="home" AND subtype="phone" AND contentLineOne NOT LIKE "%5%";
++----------+
+| COUNT(*) |
++----------+
+|       76 |
++----------+
+
+
+SELECT COUNT(*) FROM Entry WHERE type="work" AND subtype="phone" AND contentLineOne NOT LIKE "(%";
++----------+
+| COUNT(*) |
++----------+
+|       60 |
++----------+
