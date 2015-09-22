@@ -14,9 +14,9 @@ SELECT COUNT(*) FROM Entry WHERE type="home" AND subtype="phone" AND contentLine
 +----------+
 
 
-SELECT COUNT(*) FROM Entry WHERE type="work" AND subtype="phone" AND contentLineOne NOT LIKE "(%";
+SELECT COUNT(*) FROM Entry WHERE type="work" AND subtype="phone" AND contentLineOne LIKE "_-%";
 +----------+
 | COUNT(*) |
 +----------+
-|       60 |
+|      320 |
 +----------+
