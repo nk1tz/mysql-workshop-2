@@ -1,0 +1,22 @@
+SELECT COUNT(*) FROM Account;
++----------+
+| COUNT(*) |
++----------+
+|     1000 |
++----------+
+
+
+SELECT COUNT(*) FROM AddressBook;
++----------+
+| COUNT(*) |
++----------+
+|     1100 |
++----------+
+
+
+SELECT COUNT(*) FROM Entry;
++----------+
+| COUNT(*) |
++----------+
+|     4000 |
++----------+
